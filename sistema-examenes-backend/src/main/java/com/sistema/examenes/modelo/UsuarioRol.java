@@ -1,4 +1,4 @@
-package com.sistema.examenes.entidades;
+package com.sistema.examenes.modelo;
 
 import javax.persistence.*;
 
@@ -37,8 +37,5 @@ public class UsuarioRol {
 
     public void setRol(Rol rol) {
         this.rol = rol;
-    }
-
-    public UsuarioRol() {
     }
 }

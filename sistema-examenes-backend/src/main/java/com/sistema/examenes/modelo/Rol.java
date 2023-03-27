@@ -1,4 +1,4 @@
-package com.sistema.examenes.entidades;
+package com.sistema.examenes.modelo;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -12,8 +12,17 @@ public class Rol {
     private Long rolId;
     private String rolNombre;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "rol")
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "rol")
     private Set<UsuarioRol> usuarioRoles = new HashSet<>();
+
+    public Rol(){
+
+    }
+
+    public Rol(Long rolId, String rolNombre) {
+        this.rolId = rolId;
+        this.rolNombre = rolNombre;
+    }
 
     public Long getRolId() {
         return rolId;
@@ -37,8 +46,5 @@ public class Rol {
 
     public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {
         this.usuarioRoles = usuarioRoles;
-    }
-
-    public Rol() {
     }
 }

@@ -10,9 +10,8 @@ export class UserService {
 
     constructor(private httpClient: HttpClient) { }
 
-    public anadirUsuario(user:any){
+    public añadirUsuario(user:any){
       return this.httpClient.post(`${baserUrl}/usuarios/`,user);
     }
 
 }
-
